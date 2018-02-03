@@ -1,5 +1,6 @@
 ansible-postgres
 =========
+[![Build Status](https://travis-ci.org/openstax/ansible-postgresql.svg?branch=master)](https://travis-ci.org/openstax/ansible-postgresql)
 
 An ansible role used to install the postgresql database locally on a server or used to create databases and users on an Amazon RDS.
 
