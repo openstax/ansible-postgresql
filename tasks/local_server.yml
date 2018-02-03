@@ -1,0 +1,32 @@
+---
+- name: install or upgrade server apt package
+  apt:
+    name: "postgresql-{{ pg_version }}"
+    state: present
+
+- name: "enable {{ pg_service_name }} service"
+  service:
+    name: "{{ pg_service_name }}"
+    enabled: yes
+  when: pg_service_enabled
+
+#     src: etc/postgresql/postgresql.conf.j2
+#     dest: "/etc/postgresql/{{ pg_version }}/main/postgresql.conf"
+#     owner: "{{ pg_admin_user }}"
+#     group: "{{ pg_admin_group }}"
+#     mode: 0640
+#   notify: postgresql
+
+- name: install pg_hba configuration and set permissions
+  template:
+    src: etc/postgresql/pg_hba.conf.j2
+    dest: "/etc/postgresql/{{ pg_version }}/main/pg_hba.conf"
+    owner: "{{ pg_admin_user }}"
+    group: "{{ pg_admin_group }}"
+    mode: 0640
+  notify: restart postgresql
+
+- name: Ensure all configured locales are present
+  locale_gen:
+    name: "{{ pg_locale }}"
+  notify: restart postgresql

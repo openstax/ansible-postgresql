@@ -1,0 +1,24 @@
+---
+- import_tasks: postgresql.yml
+  tags:
+    - postgresql
+    - pg
+    - config
+
+- name: import local server tasks
+  import_tasks: local_server.yml
+  when:
+    - not pg_rds
+    - pg_is_master_server
+  tags:
+    - postgresql
+    - pg
+    - local_server
+
+- import_tasks: databases.yml
+  when: pg_is_master_server
+  tags:
+    - postgresql
+    - pg
+    - databases
+    - config

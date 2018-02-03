@@ -1,0 +1,34 @@
+---
+# Ensure handlers are run before attempting any database connections
+- meta: flush_handlers
+
+- name: ensure databases exist
+  postgresql_db:
+    login_host: "{{ item.host | default('127.0.0.1') }}"
+    port: "{{ item.port | default(pg_port) }}"
+    login_user: "{{ item.login_user | default(pg_admin_user) }}"
+    login_password: "{{ item.login_password | default('omit') }}"
+    name: "{{ item.name }}"
+    encoding: UTF-8
+    lc_collate: en_US.UTF-8
+    lc_ctype: en_US.UTF-8
+    template: template0
+  with_items: "{{ pg_databases }}"
+  when:
+    - "pg_databases | length > 0"
+
+
+- name: ensure pg users exist
+  postgresql_user:
+    login_host: "{{ item.host | default(pg_host) }}"
+    port: "{{ item.port | default(pg_port) }}"
+    login_user: "{{ pg_admin_user }}"
+    login_password: "{{ pg_admin_password | default('omit') }}"
+    db: "{{ item.db }}"
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    role_attr_flags: "{{ item.roles | default(pg_default_roles) | join(',') }}"
+  with_items:
+    - "{{ pg_users }}"
+  when:
+    - "pg_users | length > 0"

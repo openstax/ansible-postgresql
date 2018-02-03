@@ -1,0 +1,22 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    pg_rds: no
+    pg_is_master_server: yes
+    pg_databases:
+      - name: testing
+        port: 5432
+        host: 127.0.0.1
+      - name: testing2
+    pg_users:
+      - name: master_splinter
+        db: testing
+        password: imakeanotherfunny
+        roles:
+          - SUPERUSER
+      - name: leonerdo
+        db: testing2
+        password: ninjavanish
+  roles:
+    - role: ansible-postgresql

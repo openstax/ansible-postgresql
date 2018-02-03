@@ -1,0 +1,25 @@
+---
+pg_version: 9.5
+pg_rds: false
+
+pg_host: localhost
+pg_port: 5432
+
+pg_admin_user: postgres
+pg_admin_password: "{{ omit }}"
+pg_admin_group: "{{ pg_admin_user }}"
+
+pg_service_name: postgresql
+pg_service_user: "{{ pg_admin_user }}"
+pg_service_group: "{{ pg_admin_user }}"
+pg_service_enabled: true
+
+pg_ssl_dest_cert_file: /etc/ssl/certs/ssl-cert-snakeoil.pem
+pg_ssl_dest_key_file: /etc/ssl/private/ssl-cert-snakeoil.key
+
+pg_locale: en_US.UTF-8
+pg_default_roles:
+  - CREATEDB
+
+pg_databases: []
+pg_users: []

@@ -1,0 +1,7 @@
+---
+- name: reload and enable postgresql service
+  service:
+    name: "{{ pg_service_name }}"
+    state: restarted
+    enabled: True
+  listen: restart postgresql

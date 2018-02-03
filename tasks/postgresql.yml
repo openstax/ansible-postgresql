@@ -1,0 +1,27 @@
+---
+- name: add apt repo key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    id: ACCC4CF8
+
+- name: add apt repo
+  apt_repository:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
+
+- name: install or upgrade client apt packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "postgresql-client-{{ pg_version }}"
+    - libpq-dev
+    - python-psycopg2
+
+- name: download AWS RDS SSL cert
+  get_url:
+    url: http://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+    dest: "{{ ssl_dest_cert_dir }}"
+    owner: "{{ ssl_user }}"
+    group: "{{ ssl_group }}"
+    mode: 0644
+  when: pg_rds
