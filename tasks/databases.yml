@@ -1,10 +1,8 @@
 ---
-# Ensure handlers are run before attempting any database connections
-- meta: flush_handlers
 
 - name: ensure databases exist
   postgresql_db:
-    login_host: "{{ item.host | default('127.0.0.1') }}"
+    login_host: "{{ item.host | default(pg_host) }}"
     port: "{{ item.port | default(pg_port) }}"
     login_user: "{{ item.login_user | default(pg_admin_user) }}"
     login_password: "{{ item.login_password | default('omit') }}"
