@@ -30,3 +30,6 @@
   locale_gen:
     name: "{{ pg_locale }}"
   notify: restart postgresql
+
+# Ensure handlers are run before attempting anything else
+- meta: flush_handlers
