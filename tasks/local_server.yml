@@ -4,6 +4,12 @@
     name: "postgresql-{{ pg_version }}"
     state: present
 
+- name: Place postgresql user in the ssl-cert group
+  become: yes
+  user:
+    name: postgres
+    groups: 'ssl-cert'
+
 - name: "enable {{ pg_service_name }} service"
   service:
     name: "{{ pg_service_name }}"
