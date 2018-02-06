@@ -1,11 +1,10 @@
 ---
-
 - name: ensure databases exist
   postgresql_db:
     login_host: "{{ item.host | default(pg_host) }}"
     port: "{{ item.port | default(pg_port) }}"
-    login_user: "{{ item.login_user | default(pg_admin_user) }}"
-    login_password: "{{ item.login_password | default('omit') }}"
+    login_user: "{{ pg_admin_user }}"
+    login_password: "{{ pg_admin_user | default('omit') }}"
     name: "{{ item.name }}"
     encoding: UTF-8
     lc_collate: en_US.UTF-8
@@ -14,7 +13,6 @@
   with_items: "{{ pg_databases }}"
   when:
     - "pg_databases | length > 0"
-
 
 - name: ensure pg users exist
   postgresql_user:
@@ -26,7 +24,6 @@
     name: "{{ item.name }}"
     password: "{{ item.password }}"
     role_attr_flags: "{{ item.roles | default(pg_default_roles) | join(',') }}"
-  with_items:
-    - "{{ pg_users }}"
+  with_items: "{{ pg_users }}"
   when:
     - "pg_users | length > 0"
