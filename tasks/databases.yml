@@ -43,4 +43,3 @@
     - "{{ pg_users }}"
   when:
     - "pg_users | length > 0"
-
