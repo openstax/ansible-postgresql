@@ -4,7 +4,7 @@
     login_host: "{{ item.host | default(pg_host) }}"
     port: "{{ item.port | default(pg_port) }}"
     login_user: "{{ pg_admin_user }}"
-    login_password: "{{ pg_admin_user | default('omit') }}"
+    login_password: "{{ pg_admin_password | default('omit') }}"
     name: "{{ item.name }}"
     encoding: UTF-8
     lc_collate: en_US.UTF-8
@@ -23,7 +23,23 @@
     db: "{{ item.db }}"
     name: "{{ item.name }}"
     password: "{{ item.password }}"
-    role_attr_flags: "{{ item.roles | default(pg_default_roles) | join(',') }}"
-  with_items: "{{ pg_users }}"
+  with_items:
+    - "{{ pg_users }}"
+  when:
+    - "pg_users | length > 0"
+
+- name: grant all privileges on db to pg user
+  postgresql_privs:
+    login_host: "{{ item.host | default(pg_host) }}"
+    port: "{{ item.port | default(pg_port) }}"
+    login_user: "{{ pg_admin_user }}"
+    login_password: "{{ pg_admin_password | default('omit') }}"
+    db: "{{ item.db }}"
+    type: schema
+    objs: public
+    privs: All
+    roles: "{{ item.name }}"
+  with_items:
+    - "{{ pg_users }}"
   when:
     - "pg_users | length > 0"
