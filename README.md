@@ -12,12 +12,8 @@ N/A
 Role Variables
 --------------
 
-
-
-
-
-| Name                            | Default Value    | Description                                                                      |
-| ------------------------------- | ---------------- | -------------------------------------------------------------------------------- |
+| Name                            | Default Value    | Description |
+|------------|-----|----------------------------------------------|
 |`pg_version`| 9.5 | the postgresql database server and client version to install |
 |`pg_rds`| false | if the database server is an aws rds instance |
 |`pg_host` | localhost | the host where the database server is located |
@@ -34,7 +30,9 @@ Role Variables
 |`pg_locale` | en_US.UTF-8 | the locale setting for the database |
 |`pg_default_roles` | [CREATEDB] | default roles to apply to any configured database users |
 |`pg_databases` | [] | a list of databases to be created in the database |
-|`pg_users` | []
+|`pg_users` | [] | a list of users to be created in the database |
+|`pg_packages` | [postgresql-client-`pg_version`, libpq-dev] | the basic packages needed for the psql client |
+|`pg_extra_packages`| [python-psycopg2] | extra postgres packages that may be needed; use `python3-psycopg2` for python3 |
 
 Dependencies
 ------------
@@ -58,8 +56,6 @@ Example Playbook
             - name: master_splinter
               db: testing
               password: imakeanotherfunny
-              roles:
-                - SUPERUSER
             - name: leonerdo
               db: testing2
               password: ninjavanish
