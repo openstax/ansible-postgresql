@@ -21,5 +21,12 @@ pg_locale: en_US.UTF-8
 pg_default_roles:
   - CREATEDB
 
+pg_packages:
+  - "postgresql-client-{{ pg_version }}"
+  - libpq-dev
+
+pg_extra_packages:
+  - python-psycopg2
+
 pg_databases: []
 pg_users: []
