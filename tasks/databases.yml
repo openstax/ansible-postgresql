@@ -4,7 +4,7 @@
     login_host: "{{ item.host | default(pg_host) }}"
     port: "{{ item.port | default(pg_port) }}"
     login_user: "{{ pg_admin_user }}"
-    login_password: "{{ pg_admin_password | default('omit') }}"
+    login_password: "{{ pg_admin_password | default(omit) }}"
     name: "{{ item.name }}"
     encoding: UTF-8
     lc_collate: en_US.UTF-8
@@ -19,10 +19,11 @@
     login_host: "{{ item.host | default(pg_host) }}"
     port: "{{ item.port | default(pg_port) }}"
     login_user: "{{ pg_admin_user }}"
-    login_password: "{{ pg_admin_password | default('omit') }}"
+    login_password: "{{ pg_admin_password | default(omit) }}"
     db: "{{ item.db }}"
     name: "{{ item.name }}"
     password: "{{ item.password }}"
+    role_attr_flags: "{{ item.role_attr_flags | default(omit) }}"
   with_items:
     - "{{ pg_users }}"
   when:

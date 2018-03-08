@@ -28,7 +28,6 @@ Role Variables
 |`pg_ssl_dest_cert_file` | /etc/ssl/certs/ssl-cert-snakeoil.pem | the location of database ssl certificate file |
 |`pg_ssl_dest_key_file` | /etc/ssl/private/ssl-cert-snakeoil.key | the location of database ssl key file |
 |`pg_locale` | en_US.UTF-8 | the locale setting for the database |
-|`pg_default_roles` | [CREATEDB] | default roles to apply to any configured database users |
 |`pg_databases` | [] | a list of databases to be created in the database |
 |`pg_users` | [] | a list of users to be created in the database |
 |`pg_packages` | [postgresql-client-`pg_version`, libpq-dev] | the basic packages needed for the psql client |
