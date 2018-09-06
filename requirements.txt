@@ -30,7 +30,7 @@ ipaddress==1.0.21
 Jinja2==2.10
 jinja2-time==0.2.0
 MarkupSafe==1.0
-marshmallow==2.13.5
+marshmallow==2.15.4
 mccabe==0.6.1
 molecule==2.7.0
 monotonic==1.4
