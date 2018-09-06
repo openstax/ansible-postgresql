@@ -22,7 +22,7 @@
 
 - name: download AWS RDS SSL cert
   get_url:
-    url: http://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+    url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
     dest: "{{ ssl_dest_cert_dir }}"
     owner: "{{ ssl_user }}"
     group: "{{ ssl_group }}"
