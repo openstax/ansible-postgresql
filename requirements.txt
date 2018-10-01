@@ -34,7 +34,7 @@ marshmallow==2.15.6
 mccabe==0.6.1
 molecule==2.18.1
 monotonic==1.5
-paramiko==2.4.1
+paramiko==2.4.2
 pathspec==0.5.7
 pbr==4.2.0
 pexpect==4.6.0
