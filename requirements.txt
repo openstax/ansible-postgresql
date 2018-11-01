@@ -60,5 +60,5 @@ testinfra==1.17.0
 tree-format==0.1.2
 urllib3==1.24
 websocket-client==0.54.0
-whichcraft==0.4.1
+whichcraft==0.5.2
 yamllint==1.11.1
