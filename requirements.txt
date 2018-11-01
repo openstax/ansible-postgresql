@@ -56,7 +56,7 @@ requests==2.20.0
 sh==1.12.14
 six==1.11.0
 tabulate==0.8.2
-testinfra==1.14.1
+testinfra==1.17.0
 tree-format==0.1.2
 urllib3==1.22
 websocket-client==0.52.0
