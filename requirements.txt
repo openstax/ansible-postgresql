@@ -61,4 +61,4 @@ tree-format==0.1.2
 urllib3==1.24.1
 websocket-client==0.54.0
 whichcraft==0.5.2
-yamllint==1.12.1
+yamllint==1.14.0
