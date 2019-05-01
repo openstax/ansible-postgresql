@@ -52,7 +52,7 @@ pytest==4.4.1
 python-dateutil==2.8.0
 python-gilt==1.2.1
 PyYAML==5.1
-requests==2.20.0
+requests==2.21.0
 sh==1.12.14
 six==1.11.0
 tabulate==0.8.2
