@@ -29,7 +29,7 @@ idna==2.8
 ipaddress==1.0.23
 Jinja2==2.11.1
 jinja2-time==0.2.0
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 marshmallow==2.16.2
 mccabe==0.6.1
 molecule==2.19.0
