@@ -21,7 +21,7 @@ docker-py==1.10.6
 docker-pycreds==0.4.0
 enum34==1.1.9
 fasteners==0.15
-flake8==3.6.0
+flake8==3.7.9
 funcsigs==1.0.2
 future==0.17.1
 git-url-parse==1.1.0
