@@ -59,6 +59,6 @@ tabulate==0.8.6
 testinfra==4.1.0
 tree-format==0.1.2
 urllib3==1.25.8
-websocket-client==0.54.0
+websocket-client==0.57.0
 whichcraft==0.5.2
 yamllint==1.12.1
