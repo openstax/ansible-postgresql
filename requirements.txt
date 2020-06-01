@@ -23,7 +23,7 @@ enum34==1.1.10
 fasteners==0.15
 flake8==3.8.2
 funcsigs==1.0.2
-future==0.17.1
+future==0.18.2
 git-url-parse==1.1.0
 idna==2.7
 ipaddress==1.0.22
