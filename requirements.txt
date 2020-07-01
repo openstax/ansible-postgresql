@@ -58,7 +58,7 @@ six==1.15.0
 tabulate==0.8.7
 testinfra==5.2.1
 tree-format==0.1.2
-urllib3==1.24
+urllib3==1.25.9
 websocket-client==0.54.0
 whichcraft==0.5.2
 yamllint==1.12.1
