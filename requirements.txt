@@ -38,7 +38,7 @@ paramiko==2.7.2
 pathspec==0.8.0
 pbr==5.5.0
 pexpect==4.8.0
-pluggy==0.8.0
+pluggy==0.13.1
 poyo==0.4.2
 psutil==5.4.8
 ptyprocess==0.6.0
