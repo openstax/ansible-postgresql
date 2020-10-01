@@ -55,7 +55,7 @@ PyYAML==5.3.1
 requests==2.24.0
 sh==1.14.0
 six==1.15.0
-tabulate==0.8.2
+tabulate==0.8.7
 testinfra==1.17.0
 tree-format==0.1.2
 urllib3==1.24
