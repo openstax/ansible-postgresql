@@ -36,7 +36,7 @@ molecule==3.2.3
 monotonic==1.5
 paramiko==2.7.2
 pathspec==0.8.1
-pbr==5.1.0
+pbr==5.5.1
 pexpect==4.6.0
 pluggy==0.8.0
 poyo==0.4.2
