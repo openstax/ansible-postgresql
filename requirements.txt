@@ -1,5 +1,5 @@
 ansible==3.0.0
-ansible-lint==3.5.1
+ansible-lint==5.0.2
 anyconfig==0.9.7
 arrow==0.12.1
 asn1crypto==0.24.0
