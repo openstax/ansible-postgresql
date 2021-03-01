@@ -20,7 +20,7 @@ cryptography==3.4.6
 docker-py==1.10.6
 docker-pycreds==0.4.0
 enum34==1.1.10
-fasteners==0.14.1
+fasteners==0.16
 flake8==3.6.0
 funcsigs==1.0.2
 future==0.17.1
