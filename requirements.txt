@@ -35,7 +35,7 @@ mccabe==0.6.1
 molecule==3.3.4
 monotonic==1.5
 paramiko==2.7.2
-pathspec==0.5.9
+pathspec==0.8.1
 pbr==5.1.0
 pexpect==4.6.0
 pluggy==0.8.0
