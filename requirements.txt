@@ -32,7 +32,7 @@ jinja2-time==0.2.0
 MarkupSafe==2.0.1
 marshmallow==3.13.0
 mccabe==0.6.1
-molecule==2.19.0
+molecule==3.4.0
 monotonic==1.5
 paramiko==2.4.2
 pathspec==0.5.9
