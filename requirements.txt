@@ -2,7 +2,7 @@ ansible==4.6.0
 ansible-lint==5.2.0
 anyconfig==0.12.0
 arrow==1.1.1
-asn1crypto==0.24.0
+asn1crypto==1.4.0
 attrs==18.2.0
 backports.functools-lru-cache==1.5
 backports.ssl-match-hostname==3.5.0.1
